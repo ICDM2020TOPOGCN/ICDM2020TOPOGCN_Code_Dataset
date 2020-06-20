@@ -10,7 +10,7 @@ import seaborn as sns
 import dionysus as d
 
 # Extract images #
-f1 = h5py.File('unwrap_images_rock_v4_08222019.h5', 'r')
+f1 = h5py.File('unwrap_images.h5', 'r')
 images = []
 for i in range(len(list(f1.keys()))):
     G_temp = f1.get(list(f1.keys())[i])
