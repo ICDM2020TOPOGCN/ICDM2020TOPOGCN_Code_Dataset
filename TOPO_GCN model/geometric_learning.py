@@ -160,7 +160,7 @@ class Exponentialtransformation(Layer):
         return dict(list(base_config.items()) + list(config.items()))
 
 
-class GraphConv(Layer):
+class GSConv(Layer):
 
     def __init__(self,
                  channels,
