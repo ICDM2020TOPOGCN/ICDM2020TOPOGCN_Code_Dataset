@@ -15,15 +15,15 @@ from keras.regularizers import l2
 from utils import _grid, replace_random_edges, get_adj_from_data, grid_graph
 from ops import sp_matrix_to_sp_tensor, transpose, mixed_mode_dot, filter_dot
 import scipy.sparse as sp
-from geometric_learning import Exponentialtransformation, GraphConv
+from geometric_learning import Exponentialtransformation, GSConv
 
-sensor_images = np.load('sensor_images.npy')
-PI_null_images = np.load('PI_null_images.npy')
+sensor_images = np.load('./Dataset/sensor_images.npy')
+PI_null_images = np.load('./Dataset/PI_null_images.npy')
 vec_PI_null_images = PI_null_images.reshape((-1,400,1))
-PI_one_images = np.load('PI_one_images.npy')
+PI_one_images = np.load('./Dataset/PI_one_images.npy')
 vec_PI_one_images = PI_one_images.reshape((-1,400,1))
-Longest_NON_Rotation_PDs_null = np.load('Longest_Rotation_PDs_null_collection.npy',allow_pickle=True)
-labels = np.load('labels.npy')
+Longest_NON_Rotation_PDs_null = np.load('./Dataset/Longest_NON_Rotation_PDs_null.npy',allow_pickle=True)
+labels = np.load('./Dataset/labels.npy')
 
 train_images, test_images, train_PI_null, test_PI_null, train_PDs_null, test_PDs_null, train_labels, test_labels = train_test_split(
     sensor_images, vec_PI_null_images, Longest_NON_Rotation_PDs_null, labels, test_size=0.1, random_state=1)
